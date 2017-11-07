@@ -61,19 +61,21 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, timetable).commit();
 
         }else if (id == R.id.notifications) {
-            setTitle("Notifs");
+            setTitle("Notifications");
             Notifications notifications = new Notifications();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, notifications).commit();
 
         } else if (id == R.id.academia) {
+
             setTitle("Academia");
             Academia academia = new Academia();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, academia).commit();
 
         } else if (id == R.id.quiz) {
-            setTitle("Play Quizz");
+
+            setTitle("Play Quiz");
             Quiz quiz = new Quiz();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, quiz).commit();
