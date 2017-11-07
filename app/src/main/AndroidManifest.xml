@@ -42,7 +42,7 @@
             android:label="Books" />
         <activity
             android:name=".Academia.Courses"
-            android:label="My Courses" />
+            android:label="View Courses" />
         <activity
             android:name=".Notification.Mute.Mute_Phone"
             android:label="Ring Status" />
@@ -59,7 +59,7 @@
         <activity android:name=".Timetablee.Adds.AddTues" />
         <activity android:name=".Timetablee.Adds.AddWed" />
         <activity android:name=".Timetablee.Adds.AddThurs" />
-        <activity android:name=".Timetablee.Adds.AddFri"></activity>
+        <activity android:name=".Timetablee.Adds.AddFri" />
     </application>
 
 </manifest>

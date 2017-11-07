@@ -9,8 +9,6 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.chrisantuseze.hadum.Academia.Books;
 import com.example.chrisantuseze.hadum.Academia.Courses;
@@ -23,9 +21,7 @@ import com.example.chrisantuseze.hadum.R;
  */
 public class Academia extends Fragment {
     //private RecyclerView recyclerView;
-    private TextView txt1, txt2, txt3,txt4;
-    private ImageView img1, img2, img3,img4;
-    private CardView card1, card2, card3,card4;
+    private CardView card1, card2, card3;
 
     private Context context;
 
@@ -42,22 +38,12 @@ public class Academia extends Fragment {
 //        AcademiaAdapter adapter = new AcademiaAdapter();
 //        recyclerView.setAdapter(adapter);
 
-
-        txt1 = (TextView)view.findViewById(R.id.txt_course);
-        img1 = (ImageView) view.findViewById(R.id.img_course);
         card1 = (CardView)view.findViewById(R.id.card_course);
 
-        txt2 = (TextView)view.findViewById(R.id.txt_results);
-        img2 = (ImageView) view.findViewById(R.id.img_results);
         card2 = (CardView)view.findViewById(R.id.card_results);
-
-        txt3 = (TextView)view.findViewById(R.id.txt_books);
-        img3 = (ImageView) view.findViewById(R.id.img_books);
+        ;
         card3 = (CardView)view.findViewById(R.id.card_books);
 
-//        txt4 = (TextView)view.findViewById(R.id.txt_q_n_a);
-//        img4 = (ImageView) view.findViewById(R.id.img_q_n_a);
-//        card4 = (CardView)view.findViewById(R.id.card_q_n_a);
 
         context = getContext();
 

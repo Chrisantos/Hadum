@@ -51,7 +51,7 @@
                     android:text="Notes"
                     android:textColor="@color/notif"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="casual" />
 
             </RelativeLayout>
 
@@ -93,7 +93,7 @@
                     android:text="Todo List"
                     android:textColor="@color/notif"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="casual" />
 
             </RelativeLayout>
 
@@ -133,7 +133,7 @@
                     android:text="Ring Status"
                     android:textColor="@color/notif"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="casual" />
 
             </RelativeLayout>
 

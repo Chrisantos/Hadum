@@ -6,13 +6,15 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chrisantuseze.hadum.R;
@@ -31,6 +33,8 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 public class Courses extends AppCompatActivity{
 
@@ -47,11 +51,18 @@ public class Courses extends AppCompatActivity{
     private String[] level = { "1","2","3","4","5" };
 
     private ArrayAdapter de;
-    private TextView tvResult;
     private FloatingActionButton btGet;
     private String sem = " ";
     private String yLevel = "";
     private String mDept = "";
+    private RecyclerView recyclerView;
+    private ProgressBar progressBar;
+    private ListView listView;
+    private CourseListAdapter courseListAdapter;
+
+
+    public static final int CONNECTION_TIMEOUT = 10000;
+    public static final int READ_TIMEOUT = 15000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +74,9 @@ public class Courses extends AppCompatActivity{
         spin2 = (Spinner) findViewById(R.id.s_s_c);
         spin3 = (Spinner) findViewById(R.id.l_s_c);
 
-        tvResult = (TextView)findViewById(R.id.result);
         btGet = (FloatingActionButton) findViewById(R.id.button);
+        listView = (ListView)findViewById(R.id.listview);
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
         de = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dept);
         de.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -135,7 +147,6 @@ public class Courses extends AppCompatActivity{
 
     private class AsyncFetch extends AsyncTask<String, String, String> {
 
-        ProgressDialog pdLoading = new ProgressDialog(Courses.this);
         HttpURLConnection conn;
         URL url = null;
         String searchQuery;
@@ -153,9 +164,7 @@ public class Courses extends AppCompatActivity{
             super.onPreExecute();
 
             //this method will be running on UI thread
-            pdLoading.setMessage("\tLoading...");
-            pdLoading.setCancelable(false);
-            pdLoading.show();
+            progressBar.setVisibility(View.VISIBLE);
 
         }
 
@@ -175,8 +184,8 @@ public class Courses extends AppCompatActivity{
 
                 // Setup HttpURLConnection class to send and receive data from php and mysql
                 conn = (HttpURLConnection) url.openConnection();
-                //conn.setReadTimeout(READ_TIMEOUT);
-                //conn.setConnectTimeout(CONNECTION_TIMEOUT);
+                conn.setReadTimeout(READ_TIMEOUT);
+                conn.setConnectTimeout(CONNECTION_TIMEOUT);
                 conn.setRequestMethod("POST");
 
                 // setDoInput and setDoOutput to true as we send and recieve data
@@ -238,17 +247,14 @@ public class Courses extends AppCompatActivity{
 
         @Override
         protected void onPostExecute(String result) {
-
             //this method will be running on UI thread
-            pdLoading.dismiss();
 
-            pdLoading.dismiss();
             if(result.equals("no rows")) {
                 Toast.makeText(Courses.this, "No Results found for entered query", Toast.LENGTH_LONG).show();
             }else{
 
                 try {
-                    Log.d("Chrisantus Eze", "["+result+"]");
+                    Log.e("Chrisantus Eze", "["+result+"]");
                     Log.d("Chris Eze", result);
                     //JSONObject jObj = new JSONObject(result);   //jArray can represent item at row 1 for instance
 
@@ -260,7 +266,16 @@ public class Courses extends AppCompatActivity{
                         String level = jObj.getString("level");
                         String dpt = jObj.getString("department");
                         if (level.equals(levl) && dpt.equals(dept)){
-                            tvResult.setText(sem);
+                            List<String> items = Arrays.asList(sem.split(","));
+
+                            ArrayAdapter<String> itemsAdapter =
+                                    new ArrayAdapter<>(Courses.this, android.R.layout.simple_list_item_1, items);
+                            listView.setAdapter(itemsAdapter);
+
+//                            recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+//                            CourseListAdapter courseListAdapter = new CourseListAdapter(Courses.this,items);
+//                            recyclerView.setAdapter(courseListAdapter);
+//                            recyclerView.setLayoutManager(new LinearLayoutManager(Courses.this));
                         }
                     }
 
@@ -273,7 +288,7 @@ public class Courses extends AppCompatActivity{
                 }
 
             }
-
+            progressBar.setVisibility(View.GONE);
         }
 
     }

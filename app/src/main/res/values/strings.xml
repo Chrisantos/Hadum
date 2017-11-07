@@ -30,4 +30,5 @@
     <string name="add_button">Add</string>
     <string name="add_task_button">Add Task</string>
     <string name="title_activity_timetable">Timetable</string>
+    <string name="title_activity_test">Test</string>
 </resources>

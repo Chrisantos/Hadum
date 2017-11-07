@@ -18,7 +18,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/books">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,6 +34,7 @@
                     android:id="@+id/start"
                     tools:text="Start"
                     android:textSize="16sp"
+                    android:textColor="@color/seet"
                     android:fontFamily="casual"
                     android:layout_marginLeft="16dp"/>
                 <TextView
@@ -40,6 +42,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/end"
                     tools:text="End"
+                    android:textColor="@color/seet"
                     android:textSize="16sp"
                     android:fontFamily="casual"
                     android:layout_marginLeft="180dp"/>
@@ -53,7 +56,7 @@
                 tools:text="Course"
                 android:fontFamily="serif"
                 android:textSize="25sp"
-                android:textColor="@color/todo"
+                android:textColor="@color/white"
                 android:layout_below="@id/linear1"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="3dp"/>
@@ -65,8 +68,9 @@
                 android:layout_below="@id/course"
                 tools:text="Venue"
                 android:fontFamily="casual"
-                android:textSize="20sp"
-                android:layout_marginLeft="190dp"
+                android:textSize="18sp"
+                android:textColor="@color/soht"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="3dp"/>
         </RelativeLayout>
 
