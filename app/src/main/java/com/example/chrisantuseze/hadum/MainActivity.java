@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, timetable).commit();
 
         }else if (id == R.id.notifications) {
-            setTitle("Notifications");
+            setTitle("Notifs");
             Notifications notifications = new Notifications();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, notifications).commit();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, academia).commit();
 
         } else if (id == R.id.quiz) {
-            setTitle("Play Quiz");
+            setTitle("Play Quizz");
             Quiz quiz = new Quiz();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, quiz).commit();
