@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chrisantuseze.hadum">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Academia.Results"
+            android:label="Results" />
+        <activity
+            android:name=".Academia.PastQnA"
+            android:label="Past Q n A" />
+        <activity
+            android:name=".Notification.Note.Notes"
+            android:label="Notes" />
+        <activity
+            android:name=".Notification.Todo.Todo_List"
+            android:label="Todo"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Academia.Books"
+            android:label="Books" />
+        <activity
+            android:name=".Academia.Courses"
+            android:label="My Courses" />
+        <activity
+            android:name=".Notification.Mute.Mute_Phone"
+            android:label="Ring Status" />
+        <activity
+            android:name=".Notification.Todo.AddActivity"
+            android:label="Add Todo" />
+
+        <receiver android:name=".Notification.Mute.MyReceiver" />
+        <receiver android:name=".Notification.Mute.MyReceiver2" />
+
+        <activity android:name=".Notification.Note.Notepad" />
+        <activity android:name=".Notification.Calender.CustomCalendarActivity" />
+        <activity android:name=".Timetablee.Adds.AddMon" />
+        <activity android:name=".Timetablee.Adds.AddTues" />
+        <activity android:name=".Timetablee.Adds.AddWed" />
+        <activity android:name=".Timetablee.Adds.AddThurs" />
+        <activity android:name=".Timetablee.Adds.AddFri"></activity>
+    </application>
+
+</manifest>

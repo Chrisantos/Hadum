@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chrisantuseze.hadum.Academia.Courses">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="180dp"
+       android:background="@color/colorPrimary"
+       android:id="@+id/relative">
+
+       <LinearLayout
+           android:layout_width="200dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:id="@+id/l1"
+           android:layout_marginLeft="30dp"
+           android:layout_marginTop="5dp">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Department:"
+               android:textSize="18sp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="1dp"
+               android:fontFamily="casual"/>
+
+           <Spinner
+               android:id="@+id/d_s_c"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true" />
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="200dp"
+           android:layout_height="wrap_content"
+           android:id="@+id/l2"
+           android:orientation="horizontal"
+           android:layout_below="@id/l1"
+           android:layout_marginLeft="30dp"
+           android:layout_marginTop="3dp">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Level:"
+               android:textSize="18sp"
+               android:layout_marginRight="105dp"
+               android:layout_marginTop="1dp"
+               android:fontFamily="casual"/>
+
+           <Spinner
+               android:id="@+id/l_s_c"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true" />
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="200dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:id="@+id/l3"
+           android:layout_below="@id/l2"
+           android:layout_marginLeft="30dp"
+           android:layout_marginTop="3dp">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Semester:"
+               android:textSize="18sp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="1dp"
+               android:fontFamily="casual"/>
+
+           <Spinner
+               android:id="@+id/s_s_c"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true" />
+       </LinearLayout>
+
+
+       <android.support.design.widget.FloatingActionButton
+           android:id="@+id/button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom|end"
+           android:src="@android:drawable/ic_input_get"
+           android:tint="@android:color/white"
+           android:layout_marginRight="14dp"
+           android:layout_marginBottom="11dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentEnd="true"
+           android:layout_marginEnd="14dp" />
+   </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:fontFamily="monospace"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_below="@id/relative"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"/>
+
+</RelativeLayout>

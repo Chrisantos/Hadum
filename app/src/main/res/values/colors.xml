@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00B8D4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#FFEA00</color>
+    <color name="navDrawer">#64B5F6</color>
+    <color name="lectureTimeTable">#D50000</color>
+    <color name="readingTimeTable">#D50000</color>
+    <color name="todo">#D50000</color>
+    <color name="courses">#0d667f</color>
+    <color name="results">#0e7886</color>
+    <color name="books">#446083</color>
+    <color name="past">#03A9F4</color>
+    <color name="seet">#FF5722</color>
+    <color name="saat">#4FC3F7</color>
+    <color name="soht">#B2DFDB</color>
+    <color name="sosc">#B2DFDB</color>
+    <color name="soet">#B9F6CA</color>
+    <color name="smat">#B2FF59</color>
+    <color name="settings">#FFFFFF</color>
+    <color name="about">#000000</color>
+    <color name="notif">#D50000</color>
+    <color name="academia">#C51162</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="welcometitle">#305a7f</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+
+
+        <!-- colors for task priority selection -->
+        <color name="materialRed">#E74C3C</color>
+        <color name="materialOrange">#E67E22</color>
+        <color name="materialYellow">#F1C40F</color>
+
+
+
+</resources>

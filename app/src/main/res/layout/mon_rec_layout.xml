@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Timetablee.Days.MONDAY">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="280dp"
+        android:layout_height="90dp"
+        android:id="@+id/ttCard"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="3dp"
+                android:id="@+id/linear1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/start"
+                    tools:text="Start"
+                    android:textSize="16sp"
+                    android:fontFamily="casual"
+                    android:layout_marginLeft="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/end"
+                    tools:text="End"
+                    android:textSize="16sp"
+                    android:fontFamily="casual"
+                    android:layout_marginLeft="180dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course"
+                tools:text="Course"
+                android:fontFamily="serif"
+                android:textSize="25sp"
+                android:textColor="@color/todo"
+                android:layout_below="@id/linear1"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/venue"
+                android:layout_below="@id/course"
+                tools:text="Venue"
+                android:fontFamily="casual"
+                android:textSize="20sp"
+                android:layout_marginLeft="190dp"
+                android:layout_marginTop="3dp"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

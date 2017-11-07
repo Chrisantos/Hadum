@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "470004189674",
+    "firebase_url": "https://hydration-b22d3.firebaseio.com",
+    "project_id": "hydration-b22d3",
+    "storage_bucket": "hydration-b22d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470004189674:android:215604ba0818edc0",
+        "android_client_info": {
+          "package_name": "com.example.chrisantuseze.hadum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470004189674-sio84ugtffr835a6u2i14tpov0bfhjps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9EZQZ0NaqXXcalbsECrbfsmYbakojHNs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/timetable"
+            android:icon="@drawable/icons8_calendar_24"
+            android:title="Timetable" />
+        <item
+            android:id="@+id/notifications"
+            android:icon="@drawable/ic_notifications_none_black_24dp"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/academia"
+            android:icon="@drawable/book_variant"
+            android:title="Academia" />
+        <item
+            android:id="@+id/quiz"
+            android:icon="@drawable/icons8_quiz"
+            android:title="Play Quiz"/>
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/icons8_user"
+            android:title="Profile" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/icons8_settings"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/help_circle_outline"
+            android:title="Help and Feedback"/>
+    </group>
+
+</menu>
