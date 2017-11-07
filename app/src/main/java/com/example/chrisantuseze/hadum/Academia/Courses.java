@@ -107,7 +107,7 @@ public class Courses extends AppCompatActivity{
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 yLevel = adapterView.getItemAtPosition(i).toString();
 
-                Log.d("Chris Eze", yLevel);
+                Log.d("Chris Ezee", yLevel);
             }
 
             @Override
