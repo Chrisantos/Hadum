@@ -35,6 +35,10 @@ import java.net.URL;
 public class Courses extends AppCompatActivity{
 
     private Spinner spin1, spin2, spin3;
+    private String[] seet = { "Department","Agricultural & Bio-Resource Engineering",
+            "Chemical Engineering","Civil Engineering","Electrical & Electronic Engineering",
+            "Mechatronics Engineering","Mechanical Engineering",
+            "Materials & Metallurgical Engineering","Petroleum Engineering","Polymer & Textile Engineering" };
     private String[] dept = {
             "ABE", "CHE", "CIE", "EEE", "MCE", "MEE", "MME", "PTE", "PET"
     };
