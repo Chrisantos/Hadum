@@ -1,12 +1,12 @@
 package com.example.chrisantuseze.hadum.Academia;
 
-import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,10 +39,6 @@ import java.util.List;
 public class Courses extends AppCompatActivity{
 
     private Spinner spin1, spin2, spin3;
-    private String[] seet = { "Department","Agricultural & Bio-Resource Engineering",
-            "Chemical Engineering","Civil Engineering","Electrical & Electronic Engineering",
-            "Mechatronics Engineering","Mechanical Engineering",
-            "Materials & Metallurgical Engineering","Petroleum Engineering","Polymer & Textile Engineering" };
     private String[] dept = {
             "ABE", "CHE", "CIE", "EEE", "MCE", "MEE", "MME", "PTE", "PET"
     };
@@ -64,10 +60,15 @@ public class Courses extends AppCompatActivity{
     public static final int CONNECTION_TIMEOUT = 10000;
     public static final int READ_TIMEOUT = 15000;
 
+    Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
+        mToolbar = (Toolbar)findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Courses");
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         spin1 = (Spinner) findViewById(R.id.d_s_c);
@@ -292,4 +293,5 @@ public class Courses extends AppCompatActivity{
         }
 
     }
+
 }

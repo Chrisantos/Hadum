@@ -2,6 +2,7 @@ package com.example.chrisantuseze.hadum;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.icu.util.GregorianCalendar;
 import android.os.Build;
@@ -21,7 +22,12 @@ public class Welcome extends Activity {
         TextView txtView = (TextView)findViewById(R.id.textClock);
 
         Calendar cal = new GregorianCalendar();
-        String date = DateUtils.formatDateTime(this, cal.getTimeInMillis(), DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_TIME);
+        String date = DateUtils.formatDateTime(this, cal.getTimeInMillis(),
+                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_SHOW_YEAR
+                        | DateUtils.FORMAT_SHOW_TIME);
+
+        Typeface custom_font_1 = Typeface.createFromAsset(getAssets(),  "fonts/Aller_Rg.ttf");
+        txtView.setTypeface(custom_font_1);
 
         txtView.setText(date);
         new Handler().postDelayed(new Runnable() {

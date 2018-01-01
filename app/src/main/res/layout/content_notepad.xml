@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.chrisantuseze.hadum.Notification.Note.Notepad"
+    tools:context="com.example.chrisantuseze.hadum.Assistant.Note.Notepad"
     tools:showIn="@layout/activity_notepad">
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -16,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:paddingBottom="5dp"
         android:paddingLeft="5dp"
-        android:paddingTop="5dp">
+        android:paddingTop="5dp"
+        android:layout_below="@id/main_page_toolbar">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +53,7 @@
         android:layout_height="match_parent"
         android:id="@+id/body"
         android:layout_below="@+id/toplayout"
-        class="com.example.chrisantuseze.hadum.Notification.Note.Notepad$LineEditText"
+        class="com.example.chrisantuseze.hadum.Assistant.Note.Notepad$LineEditText"
         android:background="@android:color/transparent"
         android:capitalize="sentences"
         android:fadingEdge="vertical"

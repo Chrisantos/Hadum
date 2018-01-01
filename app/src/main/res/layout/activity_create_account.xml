@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chrisantuseze.hadum.CreateAccount"
+    android:background="@color/white">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hadum"
+        android:text="HADUM"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ha_icon"
+        android:id="@+id/logo"
+        android:layout_below="@id/hadum"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_below="@id/logo">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginBottom="4dp"
+                android:paddingLeft="1dp"
+                android:ems="10"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:focusableInTouchMode="true"
+                android:hint="Name"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/icons8_user"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5">
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:ems="10"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:focusableInTouchMode="true"
+                    android:hint="Email"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:drawableRight="@drawable/icons8_user"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginLeft="20dp">
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="4dp"
+                    android:paddingLeft="1dp"
+                    android:ems="10"
+                    android:textSize="16sp"
+                    android:imeOptions="actionNext"
+                    android:hint="Password"
+                    android:focusableInTouchMode="true"
+                    android:maxLines="1"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:drawableRight="@drawable/icons8_lock_24"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/regno"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="1dp"
+                android:hint="Registration No."
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:textSize="16sp"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/icons8_hashtag_24"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/department"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="1dp"
+                android:hint="Department"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:ems="10"
+                android:textSize="16sp"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/book_open_variant"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/level"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="4dp"
+                android:paddingLeft="1dp"
+                android:ems="10"
+                android:textSize="16sp"
+                android:imeOptions="actionGo"
+                android:maxLines="2"
+                android:focusableInTouchMode="true"
+                android:hint="Level"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/book_open_variant"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:text="Create Profile"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"/>
+
+        <LinearLayout
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have an account?"
+                android:textSize="14sp"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvsignin"
+                android:textSize="14dp"
+                android:text="SIGN IN"
+                android:textColor="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/avi"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="invisible"
+        app:indicatorName="BallGridPulseIndicator"
+        app:indicatorColor="@color/materialOrange"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"/>
+
+
+</RelativeLayout>

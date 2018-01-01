@@ -66,12 +66,6 @@ public class Academia extends Fragment {
                 context.startActivity(new Intent(context, Books.class));
             }
         });
-//        card4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                context.startActivity(new Intent(context, PastQnA.class));
-//            }
-//        });
 
 
         return view;

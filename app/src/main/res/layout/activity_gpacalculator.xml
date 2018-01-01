@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chrisantuseze.hadum.Assistant.Result.GPACalculator"
+    android:background="@color/milk">
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/main_page_toolbar"
+        android:padding="3dp"
+        android:background="@drawable/gpa_calculator">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_level"
+            android:text="Select Level"
+            android:layout_gravity="center"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:id="@+id/spinner_level"
+            android:spinnerMode="dialog">
+
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/linear1"
+        android:padding="3dp"
+        android:background="@drawable/gpa_calculator">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_semester"
+            android:text="Select Semester"
+            android:layout_gravity="center"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/spinner_semester"
+            android:spinnerMode="dialog">
+
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layout3"
+        android:layout_marginTop="34dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/linear2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:padding="5dp"
+        android:background="@drawable/gpa_calculator">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="9">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course"
+                android:text="Course"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/books"
+                android:layout_weight="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hour"
+                android:text="Units"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/books"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade"
+                android:text="Grade"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/books"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="3"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course1"
+                android:hint="Course 1"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit1"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade1"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="18">
+
+            <EditText
+                android:id="@+id/course2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="5"
+                android:hint="Course 2"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="6"
+                android:maxWidth="50dp" />
+
+            <Spinner
+                android:id="@+id/unit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:layout_weight="4"
+                android:background="@drawable/spinner_frame"
+                android:spinnerMode="dialog">
+
+            </Spinner>
+
+            <Spinner
+                android:id="@+id/grade2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:layout_weight="4"
+                android:background="@drawable/spinner_frame"
+                android:spinnerMode="dialog">
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course3"
+                android:hint="Course 3"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit3"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade3"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course4"
+                android:hint="Course 4"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit4"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade4"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course5"
+                android:hint="Course 5"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit5"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade5"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course6"
+                android:hint="Course 6"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit6"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade6"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course7"
+                android:hint="Course 7"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit7"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade7"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course8"
+                android:hint="Course 8"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit8"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade8"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course9"
+                android:hint="Course 9"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit9"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade9"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp"
+            android:weightSum="18">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/course10"
+                android:hint="Course10"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:layout_weight="5"
+                android:maxWidth="50dp"
+                android:maxLength="6"
+                android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit10"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="45dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/grade10"
+                android:layout_weight="4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="80dp"
+                android:spinnerMode="dialog"
+                android:background="@drawable/spinner_frame">
+
+            </Spinner>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+</ScrollView>

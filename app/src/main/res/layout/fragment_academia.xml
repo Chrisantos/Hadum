@@ -3,108 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chrisantuseze.hadum.Nav.Notifications">
+    tools:context="com.example.chrisantuseze.hadum.Nav.Assistant">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_course"
-            android:layout_width="130dp"
-            android:layout_height="105dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/img_course"
-                    android:layout_width="90dp"
-                    android:layout_height="80dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/courses" />
-
-                <TextView
-                    android:id="@+id/txt_course"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/img_course"
-                    android:layout_marginLeft="3dp"
-                    android:gravity="center"
-                    android:text="Courses"
-                    android:textColor="@color/seet"
-                    android:textSize="15sp"
-                    android:fontFamily="casual" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_books"
-            android:layout_width="130dp"
-            android:layout_height="105dp"
-            android:layout_marginLeft="18dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp">
-
-            <RelativeLayout
-                android:id="@+id/l3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/img_todo"
-                    android:layout_width="90dp"
-                    android:layout_height="80dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/book" />
-
-                <TextView
-                    android:id="@+id/txt_todo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/img_todo"
-                    android:layout_marginLeft="3dp"
-                    android:gravity="center"
-                    android:text="Books"
-                    android:textColor="@color/seet"
-                    android:textSize="15sp"
-                    android:fontFamily="casual" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
 
     <android.support.v7.widget.CardView
         android:layout_width="310dp"
@@ -137,6 +38,104 @@
 
     </android.support.v7.widget.CardView>
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_course"
+            android:layout_width="130dp"
+            android:layout_height="105dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="2dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_course"
+                    android:layout_width="90dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/courses" />
+
+                <TextView
+                    android:id="@+id/txt_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/img_course"
+                    android:layout_marginLeft="3dp"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="Courses"
+                    android:textColor="@color/seet"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_books"
+            android:layout_width="130dp"
+            android:layout_height="105dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:id="@+id/l3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_todo"
+                    android:layout_width="90dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/book" />
+
+                <TextView
+                    android:id="@+id/txt_todo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/img_todo"
+                    android:layout_marginLeft="3dp"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="Books"
+                    android:textColor="@color/seet"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

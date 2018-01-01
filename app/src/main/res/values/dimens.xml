@@ -3,6 +3,23 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">120dp</dimen>
+    <dimen name="nav_header_height">240dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="dots_height">55dp</dimen>
+    <dimen name="dots_margin_bottom">15dp</dimen>
+    <dimen name="img_width_height">200dp</dimen>
+    <dimen name="slide_title">25dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+    <dimen name="desc_padding_tb">5dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="dimen_view">8dp</dimen>
+    <dimen name="dimen_linear_top">15dp</dimen>
+    <dimen name="dimen_btn_height">40dp</dimen>
+    <dimen name="dimen_drawable_padding">8dp</dimen>
+    <dimen name="dimen_btn_width">125dp</dimen>
+    <dimen name="dimen_profile_btn_width">150dp</dimen>
+
+    <dimen name="detail_backdrop_height">270dp</dimen>
 </resources>

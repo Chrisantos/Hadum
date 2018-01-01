@@ -15,13 +15,21 @@
       },
       "oauth_client": [
         {
-          "client_id": "470004189674-sio84ugtffr835a6u2i14tpov0bfhjps.apps.googleusercontent.com",
+          "client_id": "470004189674-hhbatvdn8ovso80skvpru1811i7tm8oq.apps.googleusercontent.com",
           "client_type": 3
+        },
+        {
+          "client_id": "470004189674-1u6phjji5cp3avgh0m2s6o5708d2olmc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chrisantuseze.hadum",
+            "certificate_hash": "2e3700c1c5447ba4362131b47a9b78166d02c80e"
+          }
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9EZQZ0NaqXXcalbsECrbfsmYbakojHNs"
+          "current_key": "AIzaSyCSHRs4_CkfVN42cFi5qEl50WLGFDj0Ld0"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470004189674-hhbatvdn8ovso80skvpru1811i7tm8oq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

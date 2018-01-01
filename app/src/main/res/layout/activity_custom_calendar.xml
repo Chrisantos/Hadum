@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.chrisantuseze.hadum.Notification.Calender.CustomCalendarActivity">
+    tools:context="com.example.chrisantuseze.hadum.Assistant.Calender.CustomCalendarActivity">
 
-    <com.example.chrisantuseze.hadum.Notification.Calender.CalendarCustomView
+
+    <com.example.chrisantuseze.hadum.Assistant.Calender.CalendarCustomView
         android:id="@+id/custom_calendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </com.example.chrisantuseze.hadum.Notification.Calender.CalendarCustomView>
+    </com.example.chrisantuseze.hadum.Assistant.Calender.CalendarCustomView>
 
 </LinearLayout>

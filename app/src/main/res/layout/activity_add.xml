@@ -2,15 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingEnd="@dimen/activity_horizontal_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingStart="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/b1"
-    android:weightSum="1">
+    android:layout_height="match_parent">
+
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
 
 
     <EditText
@@ -20,7 +14,10 @@
         android:textColorHint="@color/books"
         android:gravity="start"
         android:hint="@string/edit_task_description"
-        android:paddingBottom ="@dimen/activity_horizontal_margin"/>
+        android:paddingBottom ="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
     <EditText
         android:id="@+id/time_edit"
@@ -33,7 +30,9 @@
         android:clickable="false"
         android:editable="false"
         android:hint="Pick a date"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
 
 
 
@@ -46,6 +45,9 @@
         android:textSize="16sp"
         style="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
 </LinearLayout>

@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -22,5 +22,36 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="success">
+        <item name="textBold">false</item>
+        <item name="textColor">#fff</item>
+        <item name="textSize">14sp</item>
+        <item name="colorBackground">#00C853</item>
+        <item name="solidBackground">true</item>
+        <!--<item name="strokeWidth">3dp</item>-->
+        <!--<item name="strokeColor">#fff</item>-->
+        <item name="iconLeft">@android:drawable/ic_popup_sync</item>
+        <item name="length">LONG</item>
+        <item name="cornerRadius">18dp</item>
+    </style>
+
+    <style name="error">
+        <item name="textBold">true</item>
+        <item name="textColor">#fff</item>
+        <item name="textSize">14sp</item>
+        <item name="colorBackground">#F44336</item>
+        <item name="solidBackground">true</item>
+        <!--<item name="strokeWidth">3dp</item>-->
+        <!--<item name="strokeColor">#fff</item>-->
+        <item name="iconLeft">@android:drawable/ic_dialog_alert</item>
+        <item name="length">LONG</item>
+        <item name="cornerRadius">18dp</item>
+    </style>
+
+    <style name="FutoTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimaryDark">@color/styleGreen</item>
+        <item name="colorAccent">@color/orange</item>
+    </style>
 
 </resources>

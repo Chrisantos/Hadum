@@ -7,8 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.chrisantuseze.hadum.Notification.Note.Notes"
+    tools:context="com.example.chrisantuseze.hadum.Assistant.Note.Notes"
     tools:showIn="@layout/activity_notes">
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
 
 
 
@@ -20,7 +21,8 @@
         android:background="#F5F5F5"
         android:divider="#d3d3d3"
         android:dividerHeight="1sp"
-        android:footerDividersEnabled="true">
+        android:footerDividersEnabled="true"
+        android:layout_below="@id/main_page_toolbar">
     </ListView>
 
 

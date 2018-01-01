@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chrisantuseze.hadum.Academia.Courses">
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
 
 
     <RelativeLayout
@@ -12,7 +13,7 @@
         android:layout_height="160dp"
         android:background="@color/colorPrimary"
         android:id="@+id/relative"
-        android:layout_marginTop="2dp">
+        android:layout_below="@id/main_page_toolbar">
 
         <LinearLayout
             android:layout_width="200dp"
@@ -87,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="Semester:"
                 android:textSize="18sp"
-                android:layout_marginRight="55dp"
+                android:layout_marginRight="40dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginLeft="2dp"
                 android:fontFamily="casual"
@@ -130,28 +131,37 @@
         android:id="@+id/recyclerView">
 
     </android.support.v7.widget.RecyclerView-->
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button"
         android:indeterminate="true"
         android:indeterminateTint="@color/colorAccent"
-        android:layout_marginTop="-7dp"
-        android:visibility="gone"
-        android:layout_below="@id/relative"
         android:layout_marginLeft="-2dp"
-        android:layout_marginRight="-2dp"/>
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview"
-        android:background="@drawable/courselist_background"
-        android:layout_margin="3dp"
-        android:layout_below="@id/progressBar">
+        android:layout_marginRight="-2dp"
+        android:visibility="gone"
+        android:layout_marginTop="-5dp"
+        android:layout_below="@id/relative"
+        android:layout_alignLeft="@+id/relative2"
+        android:layout_alignStart="@+id/relative2" />
 
-    </ListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relative2"
+        android:background="@drawable/courselist_background"
+        android:layout_below="@id/progressBar"
+        android:layout_margin="2dp">
+
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listview">
+
+        </ListView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

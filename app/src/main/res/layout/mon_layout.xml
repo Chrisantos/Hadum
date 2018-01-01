@@ -2,11 +2,12 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="305dp"
+    android:layout_width="match_parent"
     android:layout_height="40dp"
     app:cardElevation="3dp"
     app:contentPadding="0dp"
     android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
     android:layout_marginTop="3dp"
     android:layout_marginBottom="5dp">
 

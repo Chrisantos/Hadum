@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chrisantuseze.hadum.Assistant.Result.Authenticate">
+    <include layout="@layout/main_app_bar" android:id="@+id/main_page_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirm_tv"
+            android:text="Please enter your registration number to gain access"
+            android:textSize="20sp"
+            android:textColor="@color/books"
+            android:textAlignment="center"
+            android:layout_marginBottom="50dp"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:id="@+id/regno"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="1dp"
+                android:hint="Enter Registration No."
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:textSize="16sp"
+                android:focusableInTouchMode="true"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/icons8_hashtag_24"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="Proceed"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/avi"
+        style="@style/AVLoadingIndicatorView"
+        android:visibility="invisible"
+        app:indicatorName="BallGridPulseIndicator"
+        app:indicatorColor="@color/materialOrange"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"/>
+
+
+</RelativeLayout>
