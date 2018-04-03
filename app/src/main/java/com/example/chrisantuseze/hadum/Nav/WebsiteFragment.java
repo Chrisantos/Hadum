@@ -1,7 +1,6 @@
 package com.example.chrisantuseze.hadum.Nav;
 
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,13 +10,15 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.chrisantuseze.hadum.R;
+import com.example.chrisantuseze.hadum.UserInfo;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class WebsiteFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
-    private static final String URL = "http://www.futo.edu.ng";
+    //private static final String URL = "http://www.futo.edu.ng";
+    private UserInfo mUserInfo;
 
     public WebsiteFragment() {
         // Required empty public constructor
@@ -34,6 +35,8 @@ public class WebsiteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.website_fragment, container, false);
+            mUserInfo = new UserInfo(getActivity());
+            String URL = "http://" + mUserInfo.getKeyWebsite();
 
             ((WebView) rootView.findViewById(R.id.website_detail)).loadUrl(URL);     //Just what I added
             WebView webView = (WebView)rootView.findViewById(R.id.website_detail);              //

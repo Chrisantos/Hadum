@@ -13,7 +13,6 @@ public class QuizDB {
     private static final String KEY_POLITICS = "politics";
     private static final String KEY_GEO = "geo";
     private static final String KEY_RELIGION = "religion";
-    private static final String KEY_FUTO = "futo";
     private static final String KEY_TECH = "tech";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
@@ -42,10 +41,6 @@ public class QuizDB {
         editor.putInt(KEY_RELIGION, religion);
         editor.apply();
     }
-    public void setKeyFuto(int futo){
-        editor.putInt(KEY_FUTO, futo);
-        editor.apply();
-    }
     public void setKeyTech(int tech){
         editor.putInt(KEY_TECH, tech);
         editor.apply();
@@ -63,8 +58,6 @@ public class QuizDB {
     public int getKeyGeo(){return prefs.getInt(KEY_GEO, 0);}
 
     public int getKeyReligion(){return prefs.getInt(KEY_RELIGION, 0);}
-
-    public int getKeyFuto(){return prefs.getInt(KEY_FUTO, 0);}
 
     public int getKeyTech(){return prefs.getInt(KEY_TECH, 0);}
 }

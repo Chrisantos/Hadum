@@ -12,11 +12,11 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@drawable/ha_icon"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,95 +28,126 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCX4zYKkiOuBFGvfHOAd9mqot_ePtkIOZc" />
 
-        <activity
-            android:name=".Splash"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Academia.Results"
-            android:label="Results" />
+            android:label="Results"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Assistant.Note.Notes"
-            android:label="Notes" />
+            android:label="Notes"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Assistant.Todo.Todo_List"
             android:label="Todo"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Academia.Books"
-            android:label="Books" />
+            android:label="Books"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Academia.Courses"
-            android:label="View Courses" />
+            android:label="View Courses"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Assistant.Mute.Mute_Phone"
-            android:label="Ring Status" />
+            android:label="Ring Status"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Assistant.Todo.AddActivity"
-            android:label="Add Todo" />
+            android:label="Add Todo"
+            android:screenOrientation="portrait"/>
 
         <receiver android:name=".Assistant.Mute.MyReceiver" />
         <receiver android:name=".Assistant.Mute.MyReceiver2" />
 
-        <activity android:name=".Assistant.Note.Notepad" />
-        <activity android:name=".Assistant.Calender.CustomCalendarActivity" />
-        <activity android:name=".Timetable.Adds.AddMon" />
-        <activity android:name=".Timetable.Adds.AddTues" />
-        <activity android:name=".Timetable.Adds.AddWed" />
-        <activity android:name=".Timetable.Adds.AddThurs" />
-        <activity android:name=".Timetable.Adds.AddFri" />
-        <activity
-            android:name=".Nav.Places"
-            android:label="Environs" />
+        <activity android:name=".Assistant.Note.Notepad"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Assistant.Calender.CustomCalendarActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Timetable.Adds.AddMon"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Timetable.Adds.AddTues"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Timetable.Adds.AddWed"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Timetable.Adds.AddThurs"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Timetable.Adds.AddFri"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Timetable.Timetable"
             android:label="@string/title_activity_timetable"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Nav.Quiz"
-            android:label="Play Quiz" />
+            android:label="Play Quiz"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.LandingActivity"
-            android:label="Play Quiz" />
+            android:label="Play Quiz"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.QuizSplashScreen"
             android:label="@string/title_activity_quiz_splash_screen"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.BestScore"
-            android:label="Best Score" />
+            android:label="Best Score"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.QuizCategory"
-            android:label="Category" />
+            android:label="Category"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.Categories.Sports"
-            android:label="Quiz on Sports" />
+            android:label="Quiz on Sports"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.Categories.Politics"
-            android:label="Quiz on Politics" />
+            android:label="Quiz on Politics"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.Categories.Geography"
-            android:label="Quiz on Geography" />
+            android:label="Quiz on Geography"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.Categories.Religion"
-            android:label="Quiz on Religion" />
-        <activity
-            android:name=".Quiz.Categories.FUTO"
-            android:label="Quiz on FUTO" />
+            android:label="Quiz on Religion"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Quiz.Categories.Technology"
-            android:label="Quiz on Technology" />
-        <activity android:name=".Welcome" />
-        <activity android:name=".Nav.Website" />
-        <activity android:name=".Assistant.Result.GPACalculator" />
-        <activity android:name=".CreateAccount" />
-        <activity android:name=".Assistant.Result.Authenticate" />
+            android:label="Quiz on Technology"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Welcome"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Nav.Website"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Assistant.Result.GPACalculator"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CreateAccount"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Assistant.Result.Authenticate"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".Settings.EditName" />
-        <activity android:name=".Settings.EditRegNo" />
-        <activity android:name=".Settings.EditDept" />
-        <activity android:name=".Settings.EditLevel" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Settings.EditName"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings.EditRegNo"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings.EditDept"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings.EditLevel"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Login"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings.EditWebsite"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

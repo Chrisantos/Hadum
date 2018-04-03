@@ -14,6 +14,7 @@ public class UserInfo {
     private static final String KEY_DEPARTMENT = "department";
     private static final String KEY_REGNO = "regno";
     private static final String KEY_LEVEL = "level";
+    private static final String KEY_WEBSITE = "website";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     Context context;
@@ -45,6 +46,10 @@ public class UserInfo {
         editor.putString(KEY_LEVEL, level);
         editor.apply();
     }
+    public void setKeyWebsite(String website){
+        editor.putString(KEY_WEBSITE, website);
+        editor.apply();
+    }
 
     public void clearUserInfo(){
         editor.clear();
@@ -60,5 +65,7 @@ public class UserInfo {
     public String getKeyDepartment(){return prefs.getString(KEY_DEPARTMENT, "");}
 
     public String getKeyLevel(){return prefs.getString(KEY_LEVEL, "");}
+
+    public String getKeyWebsite(){return prefs.getString(KEY_WEBSITE, "");}
 
 }

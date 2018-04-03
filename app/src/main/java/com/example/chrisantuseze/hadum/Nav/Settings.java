@@ -17,14 +17,15 @@ import com.example.chrisantuseze.hadum.Settings.EditDept;
 import com.example.chrisantuseze.hadum.Settings.EditLevel;
 import com.example.chrisantuseze.hadum.Settings.EditName;
 import com.example.chrisantuseze.hadum.Settings.EditRegNo;
+import com.example.chrisantuseze.hadum.Settings.EditWebsite;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Settings extends Fragment {
-    private TextView mEditName, mEditRegNo, mEditDept, mEditLevel;
-    private LinearLayout mLayoutName, mLayoutRegNo, mLayoutDept, mLayoutLevel;
+    private TextView mEditName, mEditRegNo, mEditDept, mEditLevel, mEditWebsite;
+    private LinearLayout mLayoutName, mLayoutRegNo, mLayoutDept, mLayoutLevel, mLayoutWebsite;
     private Context context;
 
 
@@ -43,17 +44,20 @@ public class Settings extends Fragment {
         mEditLevel = (TextView)view.findViewById(R.id.edit_level);
         mEditName = (TextView)view.findViewById(R.id.edit_name);
         mEditRegNo = (TextView)view.findViewById(R.id.edit_regno);
+        mEditWebsite = (TextView)view.findViewById(R.id.edit_website);
 
         Typeface custom_font_1 = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/Aller_Rg.ttf");
         mEditName.setTypeface(custom_font_1);
         mEditRegNo.setTypeface(custom_font_1);
         mEditLevel.setTypeface(custom_font_1);
         mEditDept.setTypeface(custom_font_1);
+        mEditWebsite.setTypeface(custom_font_1);
 
         mLayoutDept = (LinearLayout)view.findViewById(R.id.linear_dept);
         mLayoutLevel = (LinearLayout)view.findViewById(R.id.linear_level);
         mLayoutName = (LinearLayout)view.findViewById(R.id.linear_name);
         mLayoutRegNo = (LinearLayout)view.findViewById(R.id.linear_regno);
+        mLayoutWebsite = (LinearLayout)view.findViewById(R.id.linear_website);
 
         context = getContext();
 
@@ -79,6 +83,12 @@ public class Settings extends Fragment {
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(context, EditDept.class));
+            }
+        });
+        mLayoutWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, EditWebsite.class));
             }
         });
 

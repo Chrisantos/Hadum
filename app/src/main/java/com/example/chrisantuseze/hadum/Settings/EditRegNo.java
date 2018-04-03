@@ -5,25 +5,19 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.chrisantuseze.hadum.MainActivity;
 import com.example.chrisantuseze.hadum.R;
 import com.example.chrisantuseze.hadum.UserInfo;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 
 public class EditRegNo extends AppCompatActivity {
@@ -44,8 +38,8 @@ public class EditRegNo extends AppCompatActivity {
 
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uId).child("regno");
+//        uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uId).child("regno");
 
         mEditRegNo = (EditText)findViewById(R.id.edit_regno);
         mBtnSave = (Button)findViewById(R.id.btn_edit_regno);
@@ -59,37 +53,35 @@ public class EditRegNo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String regno = mEditRegNo.getText().toString();
-                userInfo.setKeyRegno(regno);
 
-                if (checkInternetConnection()){
                     if (!TextUtils.isEmpty(regno)){
-                        StyleableToast.makeText(getApplicationContext(), "Saving...", R.style.success).show();
-                        changeRegNo(regno);
+                        StyleableToast.makeText(getApplicationContext(), "Changes saved", R.style.success).show();
+                        //changeRegNo(regno);
+                        userInfo.setKeyRegno(regno);
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
                     }else{
                         StyleableToast.makeText(getApplicationContext(), "Field cannot be empty!", R.style.error).show();
                     }
-                }else{
-                    StyleableToast.makeText(getApplicationContext(), "No internet connection", R.style.error).show();
-                }
 
             }
         });
     }
 
-    private void changeRegNo(final String regno){
-        mUserDatabase.setValue(regno).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    StyleableToast.makeText(getApplicationContext(), "Changes saved", R.style.success).show();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
-                }else{
-                    StyleableToast.makeText(getApplicationContext(), "Saving failed!", R.style.error).show();
-                }
-            }
-        });
-    }
+//    private void changeRegNo(final String regno){
+//        mUserDatabase.setValue(regno).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if (task.isSuccessful()){
+//                    StyleableToast.makeText(getApplicationContext(), "Changes saved", R.style.success).show();
+//                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                    finish();
+//                }else{
+//                    StyleableToast.makeText(getApplicationContext(), "Saving failed!", R.style.error).show();
+//                }
+//            }
+//        });
+//    }
     public boolean checkInternetConnection() {
         // get Connectivity Manager object to check connection
         ConnectivityManager connectMgr = (ConnectivityManager)

@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Best way to learn through quiz"
+        android:text="Learn by engaging your brain"
         android:textSize="18sp"
         android:textColor="@color/notif"
         android:id="@+id/footnote"

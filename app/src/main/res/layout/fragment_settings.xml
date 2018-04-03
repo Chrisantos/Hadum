@@ -97,6 +97,28 @@
                 android:id="@+id/edit_level"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:id="@+id/linear_website">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/internet"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit School Website"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/white"
+                android:id="@+id/edit_website"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

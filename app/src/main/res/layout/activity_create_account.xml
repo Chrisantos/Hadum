@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -155,13 +158,33 @@
                 android:paddingLeft="1dp"
                 android:ems="10"
                 android:textSize="16sp"
-                android:imeOptions="actionGo"
+                android:imeOptions="actionNext"
                 android:maxLines="2"
                 android:focusableInTouchMode="true"
                 android:hint="Level"
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:drawableRight="@drawable/book_open_variant"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/website"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="4dp"
+                android:paddingLeft="1dp"
+                android:ems="10"
+                android:textSize="16sp"
+                android:imeOptions="actionGo"
+                android:maxLines="2"
+                android:focusableInTouchMode="true"
+                android:hint="School Website (e.g www.google.com)"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:drawableRight="@drawable/internet"/>
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -216,3 +239,4 @@
 
 
 </RelativeLayout>
+</ScrollView>

@@ -11,8 +11,8 @@ import com.example.chrisantuseze.hadum.Quiz.Categories.QuizDB;
 import com.example.chrisantuseze.hadum.R;
 
 public class BestScore extends AppCompatActivity {
-    private TextView tvSports, tvPolitics, tvGeo, tvReligion, tvFUTO, tvTech;
-    private TextView tvNameSports, tvNamePolitics, tvNameGeo, tvNameReligion, tvNameFUTO, tvNameTech;
+    private TextView tvSports, tvPolitics, tvGeo, tvReligion, tvTech;
+    private TextView tvNameSports, tvNamePolitics, tvNameGeo, tvNameReligion, tvNameTech;
     QuizDB quizDB;
     Toolbar mToolbar;
 
@@ -30,14 +30,12 @@ public class BestScore extends AppCompatActivity {
         tvPolitics = (TextView)findViewById(R.id.politicsscore);
         tvGeo = (TextView)findViewById(R.id.geographyscore);
         tvReligion = (TextView)findViewById(R.id.religionscore);
-        tvFUTO = (TextView)findViewById(R.id.futoscore);
         tvTech = (TextView)findViewById(R.id.technologyscore);
 
         tvNameSports = (TextView)findViewById(R.id.tsports);
         tvNamePolitics = (TextView)findViewById(R.id.tpolitics);
         tvNameGeo = (TextView)findViewById(R.id.tgeo);
         tvNameReligion = (TextView)findViewById(R.id.treligion);
-        tvNameFUTO = (TextView)findViewById(R.id.tfuto);
         tvNameTech = (TextView)findViewById(R.id.ttech);
 
         Typeface custom_font_1 = Typeface.createFromAsset(getAssets(),  "fonts/Aller_Rg.ttf");
@@ -45,21 +43,18 @@ public class BestScore extends AppCompatActivity {
         tvNamePolitics.setTypeface(custom_font_1);
         tvNameGeo.setTypeface(custom_font_1);
         tvNameReligion.setTypeface(custom_font_1);
-        tvNameFUTO.setTypeface(custom_font_1);
         tvNameTech.setTypeface(custom_font_1);
 
         int sports = quizDB.getKeySports();
         int politics = quizDB.getKeyPolitics();
         int geo = quizDB.getKeyGeo();
         int religion = quizDB.getKeyReligion();
-        int futo = quizDB.getKeyFuto();
         int tech = quizDB.getKeyTech();
 
         tvSports.setText(""+sports);
         tvPolitics.setText(""+politics);
         tvGeo.setText(""+geo);
         tvReligion.setText(""+religion);
-        tvFUTO.setText(""+futo);
         tvTech.setText(""+tech);
     }
     @Override

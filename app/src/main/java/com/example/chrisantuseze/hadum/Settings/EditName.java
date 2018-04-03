@@ -6,7 +6,6 @@ import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -14,16 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.chrisantuseze.hadum.MainActivity;
 import com.example.chrisantuseze.hadum.R;
 import com.example.chrisantuseze.hadum.UserInfo;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 
 public class EditName extends AppCompatActivity {
@@ -43,8 +37,8 @@ public class EditName extends AppCompatActivity {
 
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uId).child("name");
+//        uId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uId).child("name");
 
         mEditName = (EditText)findViewById(R.id.edit_name);
         mBtnSave = (Button)findViewById(R.id.btn_edit_name);
@@ -58,37 +52,35 @@ public class EditName extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             String name = mEditName.getText().toString();
-                userInfo.setKeyName(name);
 
-            if (checkInternetConnection()){
                 if (!TextUtils.isEmpty(name)){
-                    StyleableToast.makeText(getApplicationContext(), "Saving...", R.style.success).show();
-                    changeName(name);
-                }else{
-                    StyleableToast.makeText(getApplicationContext(), "Field cannot be empty!", R.style.error).show();
-                }
-            }else{
-                StyleableToast.makeText(getApplicationContext(), "No internet connection", R.style.error).show();
-            }
-
-            }
-        });
-    }
-
-    private void changeName(final String name){
-        mUserDatabase.setValue(name).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
                     StyleableToast.makeText(getApplicationContext(), "Changes saved", R.style.success).show();
+                    //changeName(name);
+                    userInfo.setKeyName(name);
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }else{
-                    StyleableToast.makeText(getApplicationContext(), "Saving failed!", R.style.error).show();
+                    StyleableToast.makeText(getApplicationContext(), "Field cannot be empty!", R.style.error).show();
                 }
+
             }
         });
     }
+
+//    private void changeName(final String name){
+//        mUserDatabase.setValue(name).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if (task.isSuccessful()){
+//                    StyleableToast.makeText(getApplicationContext(), "Changes saved", R.style.success).show();
+//                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                    finish();
+//                }else{
+//                    StyleableToast.makeText(getApplicationContext(), "Saving failed!", R.style.error).show();
+//                }
+//            }
+//        });
+//    }
     public boolean checkInternetConnection() {
         // get Connectivity Manager object to check connection
         ConnectivityManager connectMgr = (ConnectivityManager)

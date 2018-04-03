@@ -13,6 +13,8 @@ import android.text.format.DateUtils;
 import android.widget.TextView;
 
 public class Welcome extends Activity {
+    private SessionManager sessionManager;
+    private UserInfo userInfo;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -20,6 +22,19 @@ public class Welcome extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         TextView txtView = (TextView)findViewById(R.id.textClock);
+
+        // session manager
+        sessionManager = new SessionManager(getApplicationContext());
+        userInfo = new UserInfo(this);
+
+//        if (!sessionManager.isLoggedIn()) {
+//            sessionManager.setLogin(true);
+//        }else{
+//            sessionManager.setLogin(false);
+//            userInfo.clearUserInfo();
+//            startActivity(new Intent(this, Splash.class));
+//            finish();
+//        }
 
         Calendar cal = new GregorianCalendar();
         String date = DateUtils.formatDateTime(this, cal.getTimeInMillis(),

@@ -6,27 +6,15 @@ import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -35,16 +23,17 @@ public class Login extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvSignUp, tvName;
     private AVLoadingIndicatorView mAVL;
-    private FirebaseAuth mAuth;
-    private DatabaseReference mUserDatabase;
+    //private FirebaseAuth mAuth;
+    //private DatabaseReference mUserDatabase;
     String name, emaill, regno, dept, level;
+    private UserInfo mUserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+//        mAuth = FirebaseAuth.getInstance();
+//        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
         etEmail = (EditText)findViewById(R.id.email);
@@ -65,6 +54,9 @@ public class Login extends AppCompatActivity {
         etEmail.setTypeface(custom_font2);
         etPassword.setTypeface(custom_font2);
 
+
+        mUserInfo = new UserInfo(this);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -75,16 +67,24 @@ public class Login extends AppCompatActivity {
 
                 if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
                     if (checkInternetConnection()){
-                        StyleableToast.makeText(getApplicationContext(), "Signing in, please wait..",
-                                R.style.success).show();
-
                         // startAnim();
                         mAVL.setVisibility(View.VISIBLE);
                         mAVL.show();
                         etEmail.setFocusable(false);
                         etPassword.setFocusable(false);
                         btnLogin.setEnabled(false);
-                        loginUser(email, password);
+                        //loginUser(email, password);
+                        mUserInfo.setKeyDepartment("***");
+                        mUserInfo.setKeyLevel("***");
+                        mUserInfo.setKeyRegno("***");
+                        mUserInfo.setKeyName("***");
+                        mUserInfo.setKeyEmail(email);
+                        StyleableToast.makeText(getApplicationContext(), "You're now logged in..",
+                                R.style.success).show();
+                        Intent intent = new Intent(Login.this, Welcome.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
                     }else{
                         StyleableToast.makeText(getApplicationContext(), "No internet connection",
                                 R.style.error).show();
@@ -95,8 +95,7 @@ public class Login extends AppCompatActivity {
                             R.style.error).show();
                 }
                 mAVL.setVisibility(View.INVISIBLE);
-                hideAnim();
-
+                mAVL.hide();
             }
         });
 
@@ -109,44 +108,44 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void loginUser(String email, String password) {
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    mAVL.show();
-                    final String user_id = mAuth.getCurrentUser().getUid();
-                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
-                    mUserDatabase.child(user_id).child("device_token").setValue(deviceToken)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                Intent intent = new Intent(Login.this, Welcome.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                                finish();
-                            }else{
-
-                            }
-                                }
-                            });
-
-
-                }else{
-                    StyleableToast.makeText(getApplicationContext(), "Signing in failed!",
-                            R.style.error).show();
-                }
-            }
-        });
-        UserInfo mUserInfo = new UserInfo(this);
-        mUserInfo.setKeyDepartment(dept);
-        mUserInfo.setKeyLevel(level);
-        mUserInfo.setKeyRegno(regno);
-        mUserInfo.setKeyName(name);
-        mUserInfo.setKeyEmail(emaill);
-    }
+//    private void loginUser(String email, String password) {
+//
+//        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()){
+//                    mAVL.show();
+//                    final String user_id = mAuth.getCurrentUser().getUid();
+//                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
+//                    mUserDatabase.child(user_id).child("device_token").setValue(deviceToken)
+//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                            if (task.isSuccessful()){
+//                                Intent intent = new Intent(Login.this, Welcome.class);
+//                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                startActivity(intent);
+//                                finish();
+//                            }else{
+//
+//                            }
+//                                }
+//                            });
+//
+//
+//                }else{
+//                    StyleableToast.makeText(getApplicationContext(), "Signing in failed!",
+//                            R.style.error).show();
+//                }
+//            }
+//        });
+//        UserInfo mUserInfo = new UserInfo(this);
+//        mUserInfo.setKeyDepartment(dept);
+//        mUserInfo.setKeyLevel(level);
+//        mUserInfo.setKeyRegno(regno);
+//        mUserInfo.setKeyName(name);
+//        mUserInfo.setKeyEmail(emaill);
+//    }
 
     public boolean checkInternetConnection() {
         // get Connectivity Manager object to check connection
@@ -172,14 +171,6 @@ public class Login extends AppCompatActivity {
             return false;
         }
         return false;
-    }
-    private void startAnim(){
-        mAVL.show();
-
-    }
-    private void hideAnim(){
-        mAVL.hide();
-
     }
 
 }

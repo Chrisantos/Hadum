@@ -196,54 +196,6 @@
 
 
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/linearLayout2"
-            android:layout_marginTop="20dp">
-
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_futo"
-                android:layout_width="120dp"
-                android:layout_height="130dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/img_futo"
-                        android:layout_width="110dp"
-                        android:layout_height="100dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/futo" />
-
-                    <TextView
-                        android:id="@+id/txt_futo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@id/img_futo"
-                        android:layout_marginLeft="3dp"
-                        android:gravity="center"
-                        android:text="FUTO"
-                        android:textColor="@color/notif"
-                        android:textSize="14sp"
-                        android:fontFamily="casual" />
-
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_tech"
@@ -251,7 +203,10 @@
                 android:layout_height="130dp"
                 android:layout_marginLeft="25dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardElevation="2dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/linearLayout2"
+                android:layout_marginTop="20dp">
 
                 <RelativeLayout
                     android:id="@+id/l5"
@@ -284,9 +239,6 @@
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
-
-
-        </LinearLayout>
 
     </RelativeLayout>
 
